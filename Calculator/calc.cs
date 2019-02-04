@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Calculator
 {
     public class calc
+    //jaja
     {
         public double a { get; set; }
         public double b { get; set; }
