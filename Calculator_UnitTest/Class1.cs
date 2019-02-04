@@ -36,6 +36,7 @@ namespace Calculator_UnitTest
         [TestCase(-1, 2, 1)]
         [TestCase(3, -2, 1)]
         [TestCase(3, 0, 3)]
+        [TestCase(6, 6, 12)]
         public void AddTestCases(int a, int b, int result)
         {
 
