@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,6 +15,9 @@ namespace Calculator
         public double divident { get; set; }
         public double divisor { get; set; }
         public double Accumulator { get; private set; }
+        public double Divisor { get; set; }
+
+        public double Divident {get; set; }
 
 
         public calculator()
@@ -123,7 +127,7 @@ namespace Calculator
             }
         }
 
-        public double Divide(double Divisor)
+        public double Divide(double Divident, double Divisor)
         {
 
             if (Divisor == 0)
@@ -137,6 +141,12 @@ namespace Calculator
                 Accumulator = result;
                 return result;
             }
+
+        }
+
+        public void Clear()
+        {
+            Accumulator = 0;
         }
 
     }
