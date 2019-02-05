@@ -127,7 +127,7 @@ namespace Calculator
             }
         }
 
-        public double Divide(double Divident, double Divisor)
+        public double Divide(double Divisor)
         {
 
             if (Divisor == 0)
