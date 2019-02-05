@@ -117,7 +117,7 @@ namespace Calculator
 
         }
 
-        public double Divide(double i, double Divisor)
+        public double Divide(double Divident, double Divisor)
         {
 
             if (Divisor == 0)
