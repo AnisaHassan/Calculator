@@ -71,11 +71,7 @@ namespace Calculator
 
         public double Divide(double Divident, double Divisor)
         {
-            ////// return Divident / Divisor;
-            //// if (Divisor == 0)
-            ////     throw new System.DivideByZeroException();
 
-            //return Divident / Divisor;
             if (Divisor == 0)
             {
 
