@@ -116,16 +116,16 @@ namespace Calculator.Test.Unit
         [Test]
         public void Divide_4_And_2_Return2()
         {
-            uut.Divident = 4;
-            uut.Divisor = 2;
-            Assert.That(uut.Divide(uut.Divident, uut.Divisor), Is.EqualTo(2));
+            uut.divident = 4;
+            uut.divisor = 2;
+            Assert.That(uut.Divide(uut.divident, uut.divisor), Is.EqualTo(2));
         }
 
         [Test]
         public void Divide_6_And_0_ReturnError()
         {
             uut.Divide(6, 0);
-            Assert.That(uut.Divide(uut.Divident, uut.Divisor), Is.EqualTo(0));
+            Assert.That(uut.Divide(uut.divident, uut.divisor), Is.EqualTo(0));
         }
 
         // TEST ACCUMULATOR

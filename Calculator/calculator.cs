@@ -15,9 +15,6 @@ namespace Calculator
         public double divident { get; set; }
         public double divisor { get; set; }
         public double Accumulator { get; private set; }
-        public double Divisor { get; set; }
-
-        public double Divident {get; set; }
 
 
         public calculator()
@@ -113,34 +110,28 @@ namespace Calculator
 
         }
 
-        public double Divide(double Divident, double Divisor)
+        public double Divide(double divident, double divisor)
         {
 
-            if (Divisor == 0)
-            {
-                Console.WriteLine("Kan ikke lade sig gøre.");
-                return 0;
-            }
-            else
-            {
-                return Divident / Divisor;
-            }
+            if (divisor == 0)
+                throw new System.DivideByZeroException();
+
+            double result = divident / divisor;
+            Accumulator = result;
+            return result;
+
         }
 
-        public double Divide(double Divisor)
+        public double Divide(double divisor)
         {
 
-            if (Divisor == 0)
-            {
-                Console.WriteLine("Kan ikke lade sig gøre.");
-                return 0;
-            }
-            else
-            {
-                double result = Accumulator / Divisor;
+            if (divisor == 0)
+                throw new System.DivideByZeroException();
+            
+                double result = Accumulator / divisor;
                 Accumulator = result;
                 return result;
-            }
+           
 
         }
 
