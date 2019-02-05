@@ -98,7 +98,7 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Multiply(uut.a, uut.b), Is.EqualTo(4));
         }
 
-        //Ganger med negativ værdier
+        //Ganger med negative værdier
         [Test]
 
         public void Multiply_2_And_5_Return4()
@@ -124,7 +124,7 @@ namespace Calculator.Test.Unit
         // TEST DIVIDE METODE
 
         [Test]
-        public void Divide_4_And_2_Return2()
+        public void Divide_4_By_2_Return2()
         {
             uut.divident = 4;
             uut.divisor = 2;
@@ -132,10 +132,10 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Divide_6_And_0_ReturnError()
+        public void Divide_6_By_0_ReturnError()
         {
-            uut.Divide(6, 0);
-            Assert.That(uut.Divide(uut.divident, uut.divisor), Is.EqualTo(0));
+            Assert.Catch<DivideByZeroException>(() => uut.Divide(6, 0));
+
         }
 
         // TEST ACCUMULATOR
@@ -147,11 +147,27 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
+        public void AccumulatorReturns384When24And16IsMultiplied()
+        {
+            uut.Multiply(24, 16);
+            Assert.That(uut.Accumulator, Is.EqualTo(384));
+        }
+
+        [Test]
+        public void AccumulatorReturns168When240And32IsSubstract()
+        {
+            uut.Subtract(240, 72);
+            Assert.That(uut.Accumulator, Is.EqualTo(168));
+        }
+
+        [Test]
         public void AccumulatorReturns4When2And2IsAdded()
         {
             uut.Add(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
+
+        // TEST CLEAR METODE
 
         [Test]
         public void ClearAccumulationForZeroes()
