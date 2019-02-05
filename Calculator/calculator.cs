@@ -47,20 +47,40 @@ namespace Calculator
 
         public double Power(double a, double b)
         {
+            //if (a<0 && b % 1 == 0)
+            //{
+
+            //   Console.WriteLine("Kan ikke lade sig gøre.");
+            //    return 0;
+            //}
+            //else
+            //{
             double result = Math.Pow(a, b);
             Accumulator = result;
             return result;
-            
+            //}
+
 
         }
 
         public double Divide(double Divident, double Divisor)
         {
             return Divident / Divisor;
-        }
-        
 
-        
-    
+            //if (divisor == 0)
+            //{
+
+            //    Console.WriteLine("Kan ikke lade sig gøre.");
+            //    return 0;
+            //}
+            //else
+            //{
+            //    return Divident / Divisor;
+            //}
+        }
+
+
+
+
     }
 }
