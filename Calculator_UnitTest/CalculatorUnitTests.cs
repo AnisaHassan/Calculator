@@ -139,14 +139,14 @@ namespace Calculator.Test.Unit
         [Test]
         public void AccumulatorReturns384When24And16IsMultiplied()
         {
-            uut.Add(24, 16);
-            Assert.That(uut.Accumulator, Is.EqualTo(284));
+            uut.Multiply(24, 16);
+            Assert.That(uut.Accumulator, Is.EqualTo(384));
         }
 
         [Test]
         public void AccumulatorReturns168When240And32IsSubstract()
         {
-            uut.Subtract(240, 32);
+            uut.Subtract(240, 72);
             Assert.That(uut.Accumulator, Is.EqualTo(168));
         }
 
@@ -156,6 +156,8 @@ namespace Calculator.Test.Unit
             uut.Add(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
+
+        //TEST CLEAR-method
 
         [Test]
         public void ClearAccumulationForZeroes()
