@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 using Calculator;
 using NUnit.Framework;
 
-namespace Calculator_UnitTest
+namespace Calculator.Test.Unit
 {
     [TestFixture]
-    public class Class1
+    public class CalculatorUnitTests
     {
 
-        private calc uut;
+        private calculator uut;
 
         [SetUp]
         public void SetUp()
         {
-            uut = new calc();
+            uut = new calculator();
         }
 
         //Med hele tal

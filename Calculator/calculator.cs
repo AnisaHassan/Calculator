@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    public class calc
+    public class calculator
     //jaja  jjjjj
     {
         public double a { get; set; }
