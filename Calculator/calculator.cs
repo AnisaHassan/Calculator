@@ -11,13 +11,11 @@ namespace Calculator
     {
         public double a { get; set; }
         public double b { get; set; }
+        public double divident { get; set; }
+        public double divisor { get; set; }
         public double addend { get; set; }
 
         public double Accumulator { get; private set; }
-
-        public double Divident { get; set; }
-
-        public double Divisor { get; set; }
 
 
         public calculator()
@@ -94,16 +92,13 @@ namespace Calculator
         {
             //Jeg forstår ikke helt hvad der står i denne kode.
             //Så en anden må lige lave en den hørende metode :) 
+            if (Accumulator < 0 && exponent % 1 > 0)
+            {
 
-            double result = Math.Pow(Accumulator, exponent);
-            Accumulator = result;
-            return result;
-        }
-
-        public double Divide(double Divident, double Divisor)
-        {
-
-            if (Divisor == 0)
+                Console.WriteLine("Kan ikke lade sig gøre.");
+                return 0;
+            }
+            if (Accumulator < 0 && exponent % 1 < 0)
             {
 
                 Console.WriteLine("Kan ikke lade sig gøre.");
@@ -111,8 +106,11 @@ namespace Calculator
             }
             else
             {
-                return Divident / Divisor;
+                double result = Math.Pow(Accumulator, exponent);
+                Accumulator = result;
+                return result;
             }
+
         }
 
         public double Divide(double Divisor)

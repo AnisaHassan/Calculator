@@ -115,8 +115,7 @@ namespace Calculator.Test.Unit
         [Test]
         public void Divide_6_And_0_ReturnError()
         {
-            uut.Divident = 6;
-            uut.Divisor = 0;
+            uut.Divide(6, 0);
             Assert.That(uut.Divide(uut.Divident, uut.Divisor), Is.EqualTo(0));
         }
 
@@ -132,7 +131,6 @@ namespace Calculator.Test.Unit
             uut.Add(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
-
-
     }
+
 }
