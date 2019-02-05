@@ -12,6 +12,7 @@ namespace Calculator
     {
         public double a { get; set; }
         public double b { get; set; }
+        public double addend { get; set; }
         public double divident { get; set; }
         public double divisor { get; set; }
         public double Accumulator { get; private set; }
