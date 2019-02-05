@@ -13,8 +13,6 @@ namespace Calculator
         public double b { get; set; }
         public double divident { get; set; }
         public double divisor { get; set; }
-        public double addend { get; set; }
-
         public double Accumulator { get; private set; }
 
 
@@ -90,8 +88,6 @@ namespace Calculator
 
         public double Power(double exponent)
         {
-            //Jeg forstår ikke helt hvad der står i denne kode.
-            //Så en anden må lige lave en den hørende metode :) 
             if (Accumulator < 0 && exponent % 1 > 0)
             {
 
@@ -113,12 +109,25 @@ namespace Calculator
 
         }
 
+        public double Divide(double Divident, double Divisor)
+        {
+
+            if (Divisor == 0)
+            {
+                Console.WriteLine("Kan ikke lade sig gøre.");
+                return 0;
+            }
+            else
+            {
+                return Divident / Divisor;
+            }
+        }
+
         public double Divide(double Divisor)
         {
 
             if (Divisor == 0)
             {
-
                 Console.WriteLine("Kan ikke lade sig gøre.");
                 return 0;
             }
@@ -129,7 +138,6 @@ namespace Calculator
                 return result;
             }
         }
-
 
     }
 }

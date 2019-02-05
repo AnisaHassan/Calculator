@@ -24,8 +24,10 @@ namespace Calculator
             //Console.WriteLine(calc.Power(2, 1.2));
             // Console.WriteLine(calc.Power(-2, 12));
              Console.WriteLine(calc.Divide(6, 0));
-           // Console.WriteLine(calc.Add(2));
+           
+           Console.WriteLine(calc.Add(2));
             //Console.WriteLine(calc.Subtract(2));
+
 
         }
     }
