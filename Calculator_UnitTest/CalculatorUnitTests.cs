@@ -102,5 +102,22 @@ namespace Calculator.Test.Unit
 
             Assert.That(uut.Multiply(uut.a, uut.b), Is.EqualTo(10));
         }
+
+
+        [Test]
+        public void Divide_4_And_2_Return2()
+        {
+            uut.Divident = 4;
+            uut.Divisor = 2;
+            Assert.That(uut.Divide(uut.Divident, uut.Divisor), Is.EqualTo(2));
+        }
+
+        [Test]
+        public void Divide_6_And_0_Return0()
+        {
+            uut.Divident = 6;
+            uut.Divisor = 0;
+            Assert.That(uut.Divide(uut.Divident, uut.Divisor), Is.EqualTo(0));
+        }
     }
 }

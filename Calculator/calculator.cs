@@ -12,6 +12,10 @@ namespace Calculator
         public double a { get; set; }
         public double b { get; set; }
 
+        public double Divident { get; set; }
+
+        public double Divisor { get; set; }
+
         public double Add(double a, double b)
         {
             return a + b;
@@ -32,6 +36,10 @@ namespace Calculator
             return Math.Pow(a, b);
 
         }
-        //Det er bar en prøve...
+
+        public double Divide(double Divident, double Divisor)
+        {
+            return Divident / Divisor;
+        }
     }
 }
