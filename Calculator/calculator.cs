@@ -33,5 +33,8 @@ namespace Calculator
 
         }
         //Det er bar en prøve...
+
+        public double Accumulator { get; private set; }
+    
     }
 }
