@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace Calculator
 {
     public class calculator
- 
+
     {
         public double a { get; set; }
         public double b { get; set; }
         public double addend { get; set; }
 
-        public double Accumulator { get; private set; } 
+        public double Accumulator { get; private set; }
 
         public double Divident { get; set; }
 
@@ -94,9 +94,13 @@ namespace Calculator
         {
             //Jeg forstår ikke helt hvad der står i denne kode.
             //Så en anden må lige lave en den hørende metode :) 
+
+            double result = Math.Pow(Accumulator, exponent);
+            Accumulator = result;
+            return result;
         }
-        
-            public double Divide(double Divident, double Divisor)
+
+        public double Divide(double Divident, double Divisor)
         {
 
             if (Divisor == 0)
@@ -111,7 +115,22 @@ namespace Calculator
             }
         }
 
+        public double Divide(double Divisor)
+        {
 
+            if (Divisor == 0)
+            {
+
+                Console.WriteLine("Kan ikke lade sig gøre.");
+                return 0;
+            }
+            else
+            {
+                double result = Accumulator / Divisor;
+                Accumulator = result;
+                return result;
+            }
+        }
 
 
     }
