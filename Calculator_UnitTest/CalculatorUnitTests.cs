@@ -37,7 +37,7 @@ namespace Calculator.Test.Unit
         [TestCase(3, -2, 1)]
         [TestCase(3, 0, 3)]
         [TestCase(6, 6, 12)]
-        [TestCase(2, 1, 4)]
+        [TestCase(2, 1, 3)]
         public void AddTestCases(int a, int b, int result)
         {
 
