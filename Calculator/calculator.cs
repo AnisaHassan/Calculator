@@ -7,33 +7,50 @@ using System.Threading.Tasks;
 namespace Calculator
 {
     public class calculator
-    //jaja  jjjjj
+ 
     {
         public double a { get; set; }
         public double b { get; set; }
+
+        public double Accumulator { get; private set; } 
 
         public double Divident { get; set; }
 
         public double Divisor { get; set; }
 
+
+        public calculator()
+        {
+            Accumulator = 0;
+        }
+
         public double Add(double a, double b)
         {
-            return a + b;
+            double result = a + b;
+            Accumulator = result;
+            return result;
         }
 
         public double Subtract(double a, double b)
         {
-            return a - b;
+            double result = a - b;
+            Accumulator = result;
+            return result;
         }
 
         public double Multiply(double a, double b)
         {
-            return a * b;
+            double result = a * b;
+            Accumulator = result;
+            return result;
         }
 
         public double Power(double a, double b)
         {
-            return Math.Pow(a, b);
+            double result = Math.Pow(a, b);
+            Accumulator = result;
+            return result;
+            
 
         }
 
@@ -41,9 +58,9 @@ namespace Calculator
         {
             return Divident / Divisor;
         }
-        //Det er bar en prøve...
+        
 
-        public double Accumulator { get; private set; }
+        
     
     }
 }

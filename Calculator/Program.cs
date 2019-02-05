@@ -12,6 +12,8 @@ namespace Calculator
         {
            calculator calc = new calculator();
 
+           
+
             Console.WriteLine(calc.Add(5,1));
             Console.WriteLine(calc.Subtract(5, 4));
             Console.WriteLine(calc.Multiply(5, 2));
