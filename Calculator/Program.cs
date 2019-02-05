@@ -26,6 +26,7 @@ namespace Calculator
             // Console.WriteLine(calc.Divide(6, 0));
             Console.WriteLine(calc.Add(2));
             Console.WriteLine(calc.Subtract(2));
+            
 
         }
     }
