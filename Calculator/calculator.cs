@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 namespace Calculator
 {
     public class calculator
- 
+
     {
         public double a { get; set; }
         public double b { get; set; }
+        public double addend { get; set; }
 
-        public double Accumulator { get; private set; } 
+        public double Accumulator { get; private set; }
 
         public double Divident { get; set; }
 
@@ -31,6 +32,13 @@ namespace Calculator
             return result;
         }
 
+        public double Add(double addend)
+        {
+            double result = addend + Accumulator;
+            Accumulator = result;
+            return result;
+        }
+
         public double Subtract(double a, double b)
         {
             double result = a - b;
@@ -38,9 +46,23 @@ namespace Calculator
             return result;
         }
 
+        public double Subtract(double subtractor)
+        {
+            double result = Accumulator - subtractor;
+            Accumulator = result;
+            return result;
+        }
+
         public double Multiply(double a, double b)
         {
             double result = a * b;
+            Accumulator = result;
+            return result;
+        }
+
+        public double Multiply(double multiplier)
+        {
+            double result = Accumulator * multiplier;
             Accumulator = result;
             return result;
         }
@@ -66,7 +88,16 @@ namespace Calculator
                 return result;
             }
 
+        }
 
+        public double Power(double exponent)
+        {
+            //Jeg forstår ikke helt hvad der står i denne kode.
+            //Så en anden må lige lave en den hørende metode :) 
+
+            double result = Math.Pow(Accumulator, exponent);
+            Accumulator = result;
+            return result;
         }
 
         public double Divide(double Divident, double Divisor)
@@ -84,10 +115,7 @@ namespace Calculator
             }
         }
 
-        public void Clear()
-        {
-            Accumulator = 0;
-        }
+
 
 
     }
