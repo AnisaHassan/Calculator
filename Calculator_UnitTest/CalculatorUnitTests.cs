@@ -119,5 +119,18 @@ namespace Calculator.Test.Unit
             uut.Divisor = 0;
             Assert.That(uut.Divide(uut.Divident, uut.Divisor), Is.EqualTo(0));
         }
+
+        [Test]
+        public void AccumulatorDefaultReturns0()
+        {
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void AccumulatorReturns4When2And2IsAdded()
+        {
+            uut.Add(2, 2);
+            Assert.That(uut.Accumulator, Is.EqualTo(4));
+        }
     }
 }
