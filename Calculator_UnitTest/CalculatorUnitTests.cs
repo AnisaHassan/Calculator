@@ -137,6 +137,20 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
+        public void AccumulatorReturns384When24And16IsMultiplied()
+        {
+            uut.Add(24, 16);
+            Assert.That(uut.Accumulator, Is.EqualTo(284));
+        }
+
+        [Test]
+        public void AccumulatorReturns168When240And32IsSubstract()
+        {
+            uut.Subtract(240, 32);
+            Assert.That(uut.Accumulator, Is.EqualTo(168));
+        }
+
+        [Test]
         public void AccumulatorReturns4When2And2IsAdded()
         {
             uut.Add(2, 2);
