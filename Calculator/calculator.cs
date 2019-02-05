@@ -41,5 +41,9 @@ namespace Calculator
         {
             return Divident / Divisor;
         }
+        //Det er bar en prøve...
+
+        public double Accumulator { get; private set; }
+    
     }
 }
