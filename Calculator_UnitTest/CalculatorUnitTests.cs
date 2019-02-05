@@ -176,12 +176,12 @@ namespace Calculator.Test.Unit
         // TEST POWER ACCUMULATOR
 
         [Test]
-        public void PowerAccumulateAnd_Return54675()
+        public void PowerAccumulateAnd5_Return128()
         {
-            uut.Power(3, 8);
-            uut.addend = 12;
+            uut.Power(4, 5);
+            uut.addend = 8;
 
-            Assert.That(uut.Divide(uut.addend), Is.EqualTo(546.75));
+            Assert.That(uut.Divide(uut.addend), Is.EqualTo(128));
         }
 
         // Test ACCUMULATOR
