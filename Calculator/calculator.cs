@@ -98,21 +98,17 @@ namespace Calculator
         
             public double Divide(double Divident, double Divisor)
         {
-           // return Divident / Divisor;
+
             if (Divisor == 0)
-                throw new System.DivideByZeroException();
+            {
 
-            return Divident / Divisor;
-            //if (Divisor == 0)
-            //{
-
-            //    Console.WriteLine("Kan ikke lade sig gøre.");
-            //    return 0;
-            //}
-            //else
-            //{
-            //    return Divident / Divisor;
-            //}
+                Console.WriteLine("Kan ikke lade sig gøre.");
+                return 0;
+            }
+            else
+            {
+                return Divident / Divisor;
+            }
         }
 
 
