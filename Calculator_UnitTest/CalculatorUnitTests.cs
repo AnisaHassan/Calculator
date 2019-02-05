@@ -133,13 +133,6 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
 
-        [Test]
-        public void Add2AndAccumulator2Return4()
-        {
-            uut.Add(2);
-            Assert.That(uut.Accumulator, Is.EqualTo(8));
-        }
-
 
     }
 }
