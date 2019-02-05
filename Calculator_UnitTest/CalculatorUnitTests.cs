@@ -113,7 +113,7 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Divide_6_And_0_Return0()
+        public void Divide_6_And_0_ReturnError()
         {
             uut.Divident = 6;
             uut.Divisor = 0;
