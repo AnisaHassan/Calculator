@@ -24,13 +24,23 @@ namespace Calculator.Test.Unit
 
         //Med hele tal
         [Test]
-        public void Add2And1_Return4()
+        public void Add2And1_Return3()
         {
             uut.a = 2;
             uut.b = 1;
-
+           
             Assert.That(uut.Add(uut.a, uut.b), Is.EqualTo(3));
         }
+
+        [Test]
+        public void AddAccumulateAnd1_Return12()
+        {
+            uut.Add(2, 1);
+           uut.addend = 9;
+
+            Assert.That(uut.Add(uut.addend), Is.EqualTo(12));
+        }
+
 
         //Testcases med hele tal
         [TestCase(1, 2, 3)]
