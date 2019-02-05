@@ -47,27 +47,36 @@ namespace Calculator
 
         public double Power(double a, double b)
         {
-            //if (a<0 && b % 1 == 0)
-            //{
+            if (a < 0 && b % 1 > 0)
+            {
 
-            //   Console.WriteLine("Kan ikke lade sig gøre.");
-            //    return 0;
-            //}
-            //else
-            //{
-            double result = Math.Pow(a, b);
-            Accumulator = result;
-            return result;
-            //}
+                Console.WriteLine("Kan ikke lade sig gøre.");
+                return 0;
+            }
+            if (a < 0 && b % 1 < 0)
+            {
+
+                Console.WriteLine("Kan ikke lade sig gøre.");
+                return 0;
+            }
+            else
+            {
+                double result = Math.Pow(a, b);
+                Accumulator = result;
+                return result;
+            }
 
 
         }
 
         public double Divide(double Divident, double Divisor)
         {
-            return Divident / Divisor;
+           // return Divident / Divisor;
+            if (Divisor == 0)
+                throw new System.DivideByZeroException();
 
-            //if (divisor == 0)
+            return Divident / Divisor;
+            //if (Divisor == 0)
             //{
 
             //    Console.WriteLine("Kan ikke lade sig gøre.");
