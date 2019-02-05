@@ -20,6 +20,8 @@ namespace Calculator.Test.Unit
             uut = new calculator();
         }
 
+        // TEST AF ADD METODE
+
         //Med hele tal
         [Test]
         public void Add2And1_Return4()
@@ -44,33 +46,6 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(a, b), Is.EqualTo(result));
         }
 
-        [Test]
-        public void Subtract2And2_Return0()
-        {
-            uut.a = 2;
-            uut.b = 2;
-
-            Assert.That(uut.Subtract(uut.a, uut.b), Is.EqualTo(0));
-        }
-
-        [Test]
-        public void Multiply2And2_Return4()
-        {
-            uut.a = 2;
-            uut.b = 2;
-
-            Assert.That(uut.Multiply(uut.a, uut.b), Is.EqualTo(4));
-        }
-
-        [Test]
-        public void Power2And3_Return8()
-        {
-            uut.a = 2;
-            uut.b = 3;
-
-            Assert.That(uut.Power(uut.a, uut.b), Is.EqualTo(8));
-        }
-
         //Plus med kommatal
         [Test]
         public void Add2_2And1_1_Return3_3()
@@ -79,6 +54,17 @@ namespace Calculator.Test.Unit
             uut.b = 1.1;
 
             Assert.That(uut.Add(uut.a, uut.b), Is.EqualTo(3.3).Within(0.01));
+        }
+
+        // TEST SUBTRACT METODE
+
+        [Test]
+        public void Subtract2And2_Return0()
+        {
+            uut.a = 2;
+            uut.b = 2;
+
+            Assert.That(uut.Subtract(uut.a, uut.b), Is.EqualTo(0));
         }
 
         //Minus med negativ resultat
@@ -91,6 +77,16 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Subtract(uut.a, uut.b), Is.EqualTo(-2.1));
         }
 
+        // TEST MULTIPLY METODE
+
+        [Test]
+        public void Multiply2And2_Return4()
+        {
+            uut.a = 2;
+            uut.b = 2;
+
+            Assert.That(uut.Multiply(uut.a, uut.b), Is.EqualTo(4));
+        }
 
         //Ganger med negativ værdier
         [Test]
@@ -103,6 +99,19 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Multiply(uut.a, uut.b), Is.EqualTo(10));
         }
 
+        // TEST POWER METODE
+
+        [Test]
+        public void Power2And3_Return8()
+        {
+            uut.a = 2;
+            uut.b = 3;
+
+            Assert.That(uut.Power(uut.a, uut.b), Is.EqualTo(8));
+        }
+
+
+        // TEST DIVIDE METODE
 
         [Test]
         public void Divide_4_And_2_Return2()
@@ -118,6 +127,8 @@ namespace Calculator.Test.Unit
             uut.Divide(6, 0);
             Assert.That(uut.Divide(uut.Divident, uut.Divisor), Is.EqualTo(0));
         }
+
+        // TEST ACCUMULATOR
 
         [Test]
         public void AccumulatorDefaultReturns0()
