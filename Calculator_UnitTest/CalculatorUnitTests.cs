@@ -157,8 +157,6 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
 
-        // TEST CLEAR METODE
-
         [Test]
         public void ClearAccumulationForZeroes()
         {
