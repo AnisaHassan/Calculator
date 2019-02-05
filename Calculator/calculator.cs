@@ -16,6 +16,9 @@ namespace Calculator
         public double addend { get; set; }
 
         public double Accumulator { get; private set; }
+        public double Divisor { get; set; }
+
+        public double Divident {get; set; }
 
 
         public calculator()
@@ -113,7 +116,7 @@ namespace Calculator
 
         }
 
-        public double Divide(double Divisor)
+        public double Divide(double i, double Divisor)
         {
 
             if (Divisor == 0)
