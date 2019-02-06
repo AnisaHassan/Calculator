@@ -264,15 +264,34 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Divide(uut.addend), Is.EqualTo(0.5));
         }
 
+
         // TEST POWER ACCUMULATOR
-
+        // 1. POWER ACCUMULATOR
         [Test]
-        public void PowerAccumulateAnd5_Return128()
+        public void PowerAccumulateAnd2_Return16()
         {
-            uut.Power(4, 5);
-            uut.addend = 8;
+            uut.Power(2, 2);
+            Assert.That(uut.Power(2), Is.EqualTo(16));
+        }
+        // 2. POWER ACCUMULATE
+        [Test]
+        public void PowerAccumulateAnd2_Return2()
+        {
+            uut.Add(10, -5);
 
-            Assert.That(uut.Divide(uut.addend), Is.EqualTo(128));
+            Assert.That(uut.Power(2), Is.EqualTo(25));
+        }
+
+        // 3. POWER ACCUMULATE
+        [TestCase(3, 2, 9)]
+        [TestCase(5, 3, 125)]
+        [TestCase(10, 2, 100)]
+        [TestCase(1, 3, 1)]
+        public void PowerAccumulateTestcases(int a, int b, int result)
+        {
+            uut.Power(a, b);
+
+            Assert.That(uut.Power(1), Is.EqualTo(result));
         }
 
         //Clear method 
