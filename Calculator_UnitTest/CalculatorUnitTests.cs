@@ -48,7 +48,7 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(a, b), Is.EqualTo(result));
         }
 
-        //Plus med kommatal
+        //ADD med kommatal
         [Test]
         public void Add2_2And1_1_Return3_3()
         {
@@ -72,9 +72,7 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Subtract(uut.a, uut.b), Is.EqualTo(0));
         }
 
-       
-
-        //Minus med negativ resultat
+        //SUBTRACT med negativ resultat
         [Test]
         public void Subtract0_0And2_1_Return0()
         {
@@ -95,7 +93,7 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Multiply(uut.a, uut.b), Is.EqualTo(4));
         }
 
-        //Ganger med negative værdier
+        //MULTIPLY med negative værdier
         [Test]
 
         public void Multiply_2_And_5_Return4()
@@ -117,6 +115,14 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Power(uut.a, uut.b), Is.EqualTo(8));
         }
 
+        [Test()]
+        public void Power0And16_Return0()
+        {
+            uut.a = 0;
+            uut.b = 16;
+
+            Assert.That(uut.Power(uut.a, uut.b), Is.EqualTo(0));
+        }
 
         // TEST DIVIDE METODE
 
@@ -128,6 +134,8 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Divide(uut.divident, uut.divisor), Is.EqualTo(2));
         }
 
+        //TEST DIVIDE METODE MED 0
+
         [Test]
         public void Divide_6_By_0_ReturnError()
         {
@@ -135,36 +143,8 @@ namespace Calculator.Test.Unit
 
         }
 
-        // TEST ACCUMULATOR
+        // TEST ADD ACCUMULATOR
 
-        [Test]
-        public void AccumulatorDefaultReturns0()
-        {
-            Assert.That(uut.Accumulator, Is.EqualTo(0));
-        }
-
-        [Test]
-        public void AccumulatorReturns384When24And16IsMultiplied()
-        {
-            uut.Multiply(24, 16);
-            Assert.That(uut.Accumulator, Is.EqualTo(384));
-        }
-
-        [Test]
-        public void AccumulatorReturns168When240And32IsSubstract()
-        {
-            uut.Subtract(240, 72);
-            Assert.That(uut.Accumulator, Is.EqualTo(168));
-        }
-
-        [Test]
-        public void AccumulatorReturns4When2And2IsAdded()
-        {
-            uut.Add(2, 2);
-            Assert.That(uut.Accumulator, Is.EqualTo(4));
-        }
-
-        //TEST AF ACCUMULATE OG ADD METODEN
         [Test]
         public void AddAccumulateAnd1_Return12()
         {
@@ -174,19 +154,47 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(uut.addend), Is.EqualTo(12));
         }
 
+        // TEST MULTIPLY ACCUMULATOR
 
-        //TEST AF ACCUMULATE OG SUBSTRACT METODEN
         [Test]
-        public void SubstractAccumulateAnd1_Return12()
+        public void MulityplyAccumulateAnd5_Return12()
         {
-            uut.Subtract(10, 5);
-            uut.subtractor = 9;
+            uut.Multiply(7, 5);
+            uut.addend = 8;
 
-            Assert.That(uut.Subtract(uut.subtractor), Is.EqualTo(12));
+            Assert.That(uut.Multiply(uut.addend), Is.EqualTo(280));
+        }
+        // TEST DIVIDE ACCUMULATOR
+
+        [Test]
+        public void DivideAccumulateAnd9_Return05()
+        {
+            uut.Divide(45, 9);
+            uut.addend = 10;
+
+            Assert.That(uut.Divide(uut.addend), Is.EqualTo(0.5));
         }
 
-        // TEST CLEAR METODE
+        // TEST POWER ACCUMULATOR
 
+        [Test]
+        public void PowerAccumulateAnd5_Return128()
+        {
+            uut.Power(4, 5);
+            uut.addend = 8;
+
+            Assert.That(uut.Divide(uut.addend), Is.EqualTo(128));
+        }
+
+        // Test ACCUMULATOR
+        [Test]
+        public void AccumulatorReturns4When2And2IsAdded()
+        {
+            uut.Add(2, 2);
+            Assert.That(uut.Accumulator, Is.EqualTo(4));
+        }
+
+        //Clear method 
         [Test]
         public void ClearAccumulationForZeroes()
         {
