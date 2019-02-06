@@ -208,9 +208,8 @@ namespace Calculator.Test.Unit
         public void AddAccumulateAnd1_Return1()
         {
             uut.Add(1, 0);
-            uut.addend = 1;
-
-            Assert.That(uut.Add(uut.addend), Is.EqualTo(1));
+         
+            Assert.That(uut.Add(1), Is.EqualTo(2));
         }
 
         // 3. ADD ACCUMULATOR
@@ -218,41 +217,38 @@ namespace Calculator.Test.Unit
         public void AddAccumulateTestCases()
         {
             uut.Add(-2, -2);
-            uut.addend = 1;
-            Assert.That(uut.Add(uut.addend), Is.EqualTo(-3));
+            Assert.That(uut.Add(1), Is.EqualTo(-3));
         }
 
 
         // TEST MULTIPLY ACCUMULATOR
         // 1. MULTIPLY ACCUMULATOR
         [Test]
-        public void MulityplyAccumulateAnd5_Return12()
+        public void MulityplyAccumulateAnd8_Return280()
         {
             uut.Multiply(7, 5);
-            uut.addend = 8;
-
-            Assert.That(uut.Multiply(uut.addend), Is.EqualTo(280));
+          Assert.That(uut.Multiply(8), Is.EqualTo(280));
         }
 
         // 2. MULTIPLY ACCUMULATOR
         [Test]
-        public void MulityplyAccumulateAnd1_Return3()
+        public void MulityplyAccumulateAnd2_Return_minus8()
         {
-            uut.Multiply(2, 2);
-            uut.subtractor = 2;
-
-            Assert.That(uut.Multiply(uut.subtractor), Is.EqualTo(2));
+            uut.Multiply(-2, 2);
+           Assert.That(uut.Multiply(2), Is.EqualTo(-8));
         }
 
 
         // 3. MULTIPLY ACCUMULATOR
-        [Test]
-        public void MulityplyAccumulateAnd10_Return12()
+        [TestCase(3, 1, 3)]
+        [TestCase(5, 2, 10)]
+        [TestCase(10, 2, 20)]
+        [TestCase(-1, 1, -1)]
+        public void MulityplyAccumulateTestcases(int a, int b, int result)
         {
-            uut.Multiply(7, 5);
-            uut.addend = 8;
+            uut.Multiply(a, b);
 
-            Assert.That(uut.Multiply(uut.addend), Is.EqualTo(280));
+            Assert.That(uut.Multiply(1), Is.EqualTo(result));
         }
 
 
