@@ -220,6 +220,35 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(1), Is.EqualTo(-3));
         }
 
+        // TEST SUBTRACT ACCUMULATOR
+        // 1. SUBTRACT ACCUMULATOR
+        [Test]
+        public void AccumulateAnd32_Return280()
+        {
+            uut.Subtract(32, 8);
+            Assert.That(uut.Subtract(17), Is.EqualTo(7));
+        }
+
+        // 2. SUBTRACT ACCUMULATOR NEGATIVE TAL
+        [Test]
+        public void SubtractAccumulateAnd2_Return_minus8()
+        {
+            uut.Subtract(-56, 14);
+            Assert.That(uut.Subtract(18), Is.EqualTo(-88));
+        }
+
+
+        // 3. SUBTRACT ACCUMULATOR TEST CASES
+        [TestCase(3, 1, 2)]
+        [TestCase(5, 2, 3)]
+        [TestCase(-10, 2, -12)]
+        public void SubtractAccumulateTestcases(int a, int b, int result)
+        {
+            
+            Assert.That(uut.Subtract(a, b), Is.EqualTo(result));
+        }
+
+
 
         // TEST MULTIPLY ACCUMULATOR
         // 1. MULTIPLY ACCUMULATOR
@@ -230,7 +259,7 @@ namespace Calculator.Test.Unit
           Assert.That(uut.Multiply(8), Is.EqualTo(280));
         }
 
-        // 2. MULTIPLY ACCUMULATOR
+        // 2. MULTIPLY ACCUMULATOR NEGATIVE TAL
         [Test]
         public void MulityplyAccumulateAnd2_Return_minus8()
         {
@@ -239,7 +268,7 @@ namespace Calculator.Test.Unit
         }
 
 
-        // 3. MULTIPLY ACCUMULATOR
+        // 3. MULTIPLY ACCUMULATOR TEST CASES
         [TestCase(3, 1, 3)]
         [TestCase(5, 2, 10)]
         [TestCase(10, 2, 20)]
@@ -258,10 +287,32 @@ namespace Calculator.Test.Unit
         [Test]
         public void DivideAccumulateAnd9_Return05()
         {
-            uut.Divide(45, 9);
+            uut.Divide(45,9);
             uut.addend = 10;
 
-            Assert.That(uut.Divide(uut.addend), Is.EqualTo(0.5));
+            Assert.That(uut.Divide(10), Is.EqualTo(0.5));
+        }
+
+        // TEST DIVIDE ACCUMULATOR NEGATIVE TAL
+        
+        public void DivideAccumulateAnd6_Return3()
+        {
+            uut.Divide(-54, -6);
+            uut.addend = -3;
+
+            Assert.That(uut.Divide(uut.addend), Is.EqualTo(3));
+        }
+
+        // TEST DIVIDE ACCUMULATOR TEST CASES
+        [TestCase(3, 1, 3)]
+        [TestCase(68, 17, 4)]
+        [TestCase(22, 11, 2)]
+        [TestCase(-24, 4, -6)]
+        public void DivideAccumulateTestCases(double divident, double divisor, int result)
+        {
+            uut.Divide(divident,divisor);
+          
+            Assert.That(uut.Divide(1), Is.EqualTo(result));
         }
 
 
