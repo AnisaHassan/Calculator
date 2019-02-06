@@ -32,16 +32,8 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(uut.a, uut.b), Is.EqualTo(3));
         }
 
-        [Test]
-        public void AddAccumulateAnd1_Return12()
-        {
-            uut.Add(2, 1);
-           uut.addend = 9;
 
-            Assert.That(uut.Add(uut.addend), Is.EqualTo(12));
-        }
-
-
+     
         //Testcases med hele tal
         [TestCase(1, 2, 3)]
         [TestCase(-3, -1, -4)]
@@ -66,8 +58,11 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(uut.a, uut.b), Is.EqualTo(3.3).Within(0.01));
         }
 
-        // TEST SUBTRACT METODE
 
+
+
+        // TEST SUBTRACT METODE
+        //Minus med hele positive tal
         [Test]
         public void Subtract2And2_Return0()
         {
@@ -76,6 +71,8 @@ namespace Calculator.Test.Unit
 
             Assert.That(uut.Subtract(uut.a, uut.b), Is.EqualTo(0));
         }
+
+       
 
         //Minus med negativ resultat
         [Test]
@@ -165,6 +162,27 @@ namespace Calculator.Test.Unit
         {
             uut.Add(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
+        }
+
+        //TEST AF ACCUMULATE OG ADD METODEN
+        [Test]
+        public void AddAccumulateAnd1_Return12()
+        {
+            uut.Add(2, 1);
+            uut.addend = 9;
+
+            Assert.That(uut.Add(uut.addend), Is.EqualTo(12));
+        }
+
+
+        //TEST AF ACCUMULATE OG SUBSTRACT METODEN
+        [Test]
+        public void SubstractAccumulateAnd1_Return12()
+        {
+            uut.Subtract(10, 5);
+            uut.subtractor = 9;
+
+            Assert.That(uut.Subtract(uut.subtractor), Is.EqualTo(12));
         }
 
         // TEST CLEAR METODE
