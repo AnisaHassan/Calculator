@@ -40,7 +40,7 @@ namespace Calculator.Test.Unit
         [TestCase(3, 0, 3)]
         [TestCase(6, 6, 12)]
         [TestCase(2, 1, 3)]
-        public void AddTestCases(int a, int b, int result)
+        public void AddTestCases(double a, double b, double result)
         {
 
             Assert.That(uut.Add(a, b), Is.EqualTo(result));
@@ -87,7 +87,7 @@ namespace Calculator.Test.Unit
         [TestCase(7, -2, 9)]
         [TestCase(3, 0, 3)]
       
-        public void SubtractTestCases(int a, int b, int result)
+        public void SubtractTestCases(double a, double b, double result)
         {
 
             Assert.That(uut.Subtract(a,b), Is.EqualTo(result));
@@ -120,7 +120,7 @@ namespace Calculator.Test.Unit
         [TestCase(5, 2, 10)]
         [TestCase(10, 2, 20)]
         [TestCase(-1, 1, -1)]
-        public void MultiplyTestcases(int a, int b, int result)
+        public void MultiplyTestcases(double a, double b, double result)
         {
             Assert.That(uut.Multiply(a,b), Is.EqualTo(result));
         }
@@ -136,7 +136,7 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Power(uut.a, uut.b), Is.EqualTo(8));
         }
         // 2. POWER med 0
-        [Test()]
+        [Test]
         public void Power0And16_Return0()
         {
             uut.a = 0;
@@ -149,7 +149,15 @@ namespace Calculator.Test.Unit
         [TestCase(2, 1, 2)]
         [TestCase(2, 2, 4)]
         [TestCase(2, 3, 8)]
-        public void PowerTestcases(int a, int b, int result)
+        public void PowerTestcases(double a, double b, double result)
+        {
+            Assert.That(uut.Power(a, b), Is.EqualTo(result));
+        }
+
+        // 4. POWER med fejl
+        [TestCase(-2, 0.1, 0)]
+        [TestCase(-3, -0.5, 0)]
+        public void PowerReturn0(double a, double b, double result)
         {
             Assert.That(uut.Power(a, b), Is.EqualTo(result));
         }
@@ -178,7 +186,7 @@ namespace Calculator.Test.Unit
         [TestCase(2, 1, 2)]
         [TestCase(2, 2, 1)]
         [TestCase(10, 5, 2)]
-        public void DivideTestcases(int a, int b, int result)
+        public void DivideTestcases(double a, double b, double result)
         {
             Assert.That(uut.Divide(a, b), Is.EqualTo(result));
         }
@@ -242,7 +250,7 @@ namespace Calculator.Test.Unit
         [TestCase(3, 1, 2)]
         [TestCase(5, 2, 3)]
         [TestCase(-10, 2, -12)]
-        public void SubtractAccumulateTestcases(int a, int b, int result)
+        public void SubtractAccumulateTestcases(double a, double b, double result)
         {
             
             Assert.That(uut.Subtract(a, b), Is.EqualTo(result));
@@ -273,7 +281,7 @@ namespace Calculator.Test.Unit
         [TestCase(5, 2, 10)]
         [TestCase(10, 2, 20)]
         [TestCase(-1, 1, -1)]
-        public void MulityplyAccumulateTestcases(int a, int b, int result)
+        public void MulityplyAccumulateTestcases(double a, double b, double result)
         {
             uut.Multiply(a, b);
 
@@ -308,7 +316,7 @@ namespace Calculator.Test.Unit
         [TestCase(68, 17, 4)]
         [TestCase(22, 11, 2)]
         [TestCase(-24, 4, -6)]
-        public void DivideAccumulateTestCases(double divident, double divisor, int result)
+        public void DivideAccumulateTestCases(double divident, double divisor, double result)
         {
             uut.Divide(divident,divisor);
           
@@ -338,7 +346,8 @@ namespace Calculator.Test.Unit
         [TestCase(5, 3, 125)]
         [TestCase(10, 2, 100)]
         [TestCase(1, 3, 1)]
-        public void PowerAccumulateTestcases(int a, int b, int result)
+       // [TestCase(-1, 0.33, 0)]
+        public void PowerAccumulateTestcases(double a, double b, double result)
         {
             uut.Power(a, b);
 
